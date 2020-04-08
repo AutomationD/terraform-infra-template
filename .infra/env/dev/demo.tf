@@ -1,6 +1,6 @@
 // Demo Host
 resource "aws_instance" "demo" {
-  ami                         = "ami-04b9e92b5572fa0d1"
+  ami                         = data.aws_ami.ubuntu_bionic.id
   key_name                    = var.ec2_key_pair_name
   instance_type               = "t2.micro"
   vpc_security_group_ids      = [aws_security_group.demo.id]
