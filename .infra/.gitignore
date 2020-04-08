@@ -1,0 +1,11 @@
+# Infra
+.terraform
+.retry
+terraform*.tfstate
+backend.tf
+output.json
+tfplan
+
+env/*
+!env/dev
+!env/prod

@@ -1,0 +1,9 @@
+terraform {
+  backend "s3" {
+    bucket         = "${TERRAFORM_STATE_BUCKET_NAME:=foobar-tf-state}"
+    key            = "${TERRAFORM_STATE_KEY:=foo/terraform.tfstate}"
+    region         = "${TERRAFORM_STATE_REGION:=us-east-1}"
+    profile        = "${TERRAFORM_STATE_PROFILE:=foo-dev}"
+    dynamodb_table = "${TERRAFORM_STATE_DYNAMODB_TABLE:=foobar-tf-lock}"
+  }
+}
